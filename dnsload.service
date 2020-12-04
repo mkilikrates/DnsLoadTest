@@ -1,0 +1,12 @@
+[Unit]
+Description=dnsload test
+ConditionPathExists=/opt/dnsload/dnsload.sh
+
+[Service]
+Restart=always
+RestartSec=3
+ExecStart=/opt/dnsload/dnsload.sh start
+ExecStop=/opt/dnsload/dnsload.sh stop
+
+[Install]
+WantedBy=multi-user.target
